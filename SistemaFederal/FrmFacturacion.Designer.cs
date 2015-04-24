@@ -29,16 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lstFactura = new System.Windows.Forms.ListBox();
             this.txtNumeroDeFactura = new System.Windows.Forms.TextBox();
-            this.rdbtnCompra = new System.Windows.Forms.RadioButton();
-            this.rdbtnVenta = new System.Windows.Forms.RadioButton();
             this.txtCodigoDelCliente = new System.Windows.Forms.TextBox();
             this.txtNombreDelCliente = new System.Windows.Forms.TextBox();
             this.txtCodigoDelProducto = new System.Windows.Forms.TextBox();
@@ -56,10 +52,9 @@
             this.btnFactura = new System.Windows.Forms.Button();
             this.btnFacturaCuentaPorCobrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtValorFBO = new System.Windows.Forms.TextBox();
             this.txtFleteYSeguro = new System.Windows.Forms.TextBox();
+            this.lstFactura = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numupdownCantidadProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,15 +66,6 @@
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Numero de Factura";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tipo de Factura";
             // 
             // label3
             // 
@@ -126,14 +112,6 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Cantidad de Producto";
             // 
-            // lstFactura
-            // 
-            this.lstFactura.FormattingEnabled = true;
-            this.lstFactura.Location = new System.Drawing.Point(31, 189);
-            this.lstFactura.Name = "lstFactura";
-            this.lstFactura.Size = new System.Drawing.Size(482, 134);
-            this.lstFactura.TabIndex = 7;
-            // 
             // txtNumeroDeFactura
             // 
             this.txtNumeroDeFactura.Location = new System.Drawing.Point(133, 13);
@@ -141,29 +119,6 @@
             this.txtNumeroDeFactura.ReadOnly = true;
             this.txtNumeroDeFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroDeFactura.TabIndex = 8;
-            // 
-            // rdbtnCompra
-            // 
-            this.rdbtnCompra.AutoSize = true;
-            this.rdbtnCompra.Location = new System.Drawing.Point(186, 44);
-            this.rdbtnCompra.Name = "rdbtnCompra";
-            this.rdbtnCompra.Size = new System.Drawing.Size(61, 17);
-            this.rdbtnCompra.TabIndex = 9;
-            this.rdbtnCompra.TabStop = true;
-            this.rdbtnCompra.Text = "Compra";
-            this.rdbtnCompra.UseVisualStyleBackColor = true;
-            // 
-            // rdbtnVenta
-            // 
-            this.rdbtnVenta.AutoSize = true;
-            this.rdbtnVenta.Checked = true;
-            this.rdbtnVenta.Location = new System.Drawing.Point(122, 43);
-            this.rdbtnVenta.Name = "rdbtnVenta";
-            this.rdbtnVenta.Size = new System.Drawing.Size(53, 17);
-            this.rdbtnVenta.TabIndex = 10;
-            this.rdbtnVenta.TabStop = true;
-            this.rdbtnVenta.Text = "Venta";
-            this.rdbtnVenta.UseVisualStyleBackColor = true;
             // 
             // txtCodigoDelCliente
             // 
@@ -231,6 +186,7 @@
             this.btnAgregarProductoAFactura.TabIndex = 18;
             this.btnAgregarProductoAFactura.Text = "Agregar a la Factura";
             this.btnAgregarProductoAFactura.UseVisualStyleBackColor = true;
+            this.btnAgregarProductoAFactura.Click += new System.EventHandler(this.btnAgregarProductoAFactura_Click);
             // 
             // btnBuscarProducto
             // 
@@ -297,6 +253,7 @@
             this.btnFactura.TabIndex = 25;
             this.btnFactura.Text = "Generar Factura";
             this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // btnFacturaCuentaPorCobrar
             // 
@@ -316,37 +273,29 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(267, 47);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Valor FBO";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(380, 43);
+            this.label13.Location = new System.Drawing.Point(28, 42);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 13);
             this.label13.TabIndex = 29;
             this.label13.Text = "Flete y Seguro";
             // 
-            // txtValorFBO
-            // 
-            this.txtValorFBO.Location = new System.Drawing.Point(319, 44);
-            this.txtValorFBO.Name = "txtValorFBO";
-            this.txtValorFBO.Size = new System.Drawing.Size(55, 20);
-            this.txtValorFBO.TabIndex = 30;
-            // 
             // txtFleteYSeguro
             // 
-            this.txtFleteYSeguro.Location = new System.Drawing.Point(452, 43);
+            this.txtFleteYSeguro.Location = new System.Drawing.Point(100, 42);
             this.txtFleteYSeguro.Name = "txtFleteYSeguro";
             this.txtFleteYSeguro.Size = new System.Drawing.Size(77, 20);
             this.txtFleteYSeguro.TabIndex = 31;
+            // 
+            // lstFactura
+            // 
+            this.lstFactura.FormattingEnabled = true;
+            this.lstFactura.Location = new System.Drawing.Point(41, 196);
+            this.lstFactura.Name = "lstFactura";
+            this.lstFactura.Size = new System.Drawing.Size(393, 134);
+            this.lstFactura.TabIndex = 7;
             // 
             // FrmFacturacion
             // 
@@ -354,9 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 461);
             this.Controls.Add(this.txtFleteYSeguro);
-            this.Controls.Add(this.txtValorFBO);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnFacturaCuentaPorCobrar);
             this.Controls.Add(this.btnFactura);
@@ -374,8 +321,6 @@
             this.Controls.Add(this.txtCodigoDelProducto);
             this.Controls.Add(this.txtNombreDelCliente);
             this.Controls.Add(this.txtCodigoDelCliente);
-            this.Controls.Add(this.rdbtnVenta);
-            this.Controls.Add(this.rdbtnCompra);
             this.Controls.Add(this.txtNumeroDeFactura);
             this.Controls.Add(this.lstFactura);
             this.Controls.Add(this.label7);
@@ -383,7 +328,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmFacturacion";
             this.Text = "Facturación";
@@ -397,16 +341,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox lstFactura;
         private System.Windows.Forms.TextBox txtNumeroDeFactura;
-        private System.Windows.Forms.RadioButton rdbtnCompra;
-        private System.Windows.Forms.RadioButton rdbtnVenta;
         private System.Windows.Forms.TextBox txtCodigoDelCliente;
         private System.Windows.Forms.TextBox txtNombreDelCliente;
         private System.Windows.Forms.TextBox txtCodigoDelProducto;
@@ -424,9 +364,8 @@
         private System.Windows.Forms.Button btnFactura;
         private System.Windows.Forms.Button btnFacturaCuentaPorCobrar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtValorFBO;
         private System.Windows.Forms.TextBox txtFleteYSeguro;
+        private System.Windows.Forms.ListBox lstFactura;
     }
 }

@@ -31,7 +31,7 @@ namespace SistemaFederal
 
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
-            Facturacion.ShowDialog();
+           Facturacion.ShowDialog();
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
